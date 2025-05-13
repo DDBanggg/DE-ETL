@@ -11,3 +11,5 @@ allCapRdd = fileRdd.map(lambda line : line.upper())
 
 for line in allCapRdd.collect():
     print(line)
+
+sc.stop()

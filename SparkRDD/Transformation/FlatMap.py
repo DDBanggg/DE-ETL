@@ -8,3 +8,5 @@ fileRdd = sc.textFile(r"C:\Users\ddb11\PycharmProjects\DE-ETL\SparkRDD\Transform
 
 wordRdd = fileRdd.flatMap(lambda word : word.split(" "))
 print(wordRdd.collect())
+
+sc.stop()

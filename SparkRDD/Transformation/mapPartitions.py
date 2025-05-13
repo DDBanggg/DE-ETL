@@ -27,3 +27,4 @@ results = rdd.mapPartitions(
 
 print((results.collect()))
 
+sc.stop()

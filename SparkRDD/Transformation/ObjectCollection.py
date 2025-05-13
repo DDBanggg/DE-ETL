@@ -16,3 +16,5 @@ print(rdd.count()) # đếm data
 print(rdd.first()) # in ra data đầu tiên
 print(rdd.getNumPartitions()) # kiểm tra số lượng core CPU sử dụng
 print(rdd.glom().collect()) # in ra phân vùng nào chứa data gì
+
+sc.stop()

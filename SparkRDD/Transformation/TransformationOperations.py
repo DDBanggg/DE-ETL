@@ -14,3 +14,5 @@ filterRdd = numbersRdd.filter(lambda x : x > 3)
 print(filterRdd.collect())
 flatMapRdd = numbersRdd.flatMap(lambda x : [x, x * 2])
 print(flatMapRdd.collect())
+
+sc.stop()
