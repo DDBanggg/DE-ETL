@@ -47,7 +47,7 @@ class SparkConnect:
             builder.config("spark.executor.instances", num_executors)
         if jar_packages:
             jar_path = ",".join([jar_package for jar_package in jar_packages])
-            builder.config("spark.jars", jar_path)
+            builder.config("spark.jars.packages", jar_path)
         if spark_conf:
             for key, value in spark_conf.items():
                 builder.config(key, value)
@@ -58,7 +58,7 @@ class SparkConnect:
 
     def stop(self):
         if self.spark:
-            self.spark
+            self.spark.stop()
             print("--stop spark session--")
 
 

@@ -17,18 +17,18 @@ def main(config):
         validate_mysql_schema(cursor, EXPECTED_SCHEMA)
 
     # MongoDB
-    with MongoDBConnect(config["mongodb"].uri, config["mongodb"].db_name) as mongo_client:
-        create_mongodb_schema(mongo_client.db)
-        mongo_client.db.users.insert_one({
-            "user_id" : 1,
-            "login" : "bangg",
-            "gravatar_id" : "test_gravatar_id",
-            "url" : "https://testurl.url",
-            "avatar_url" : "https://avatarurl.url"
-        })
-        print("--inserted 1 record in mongodb--")
-
-        validate_mongodb_schema(mongo_client.db)
+    # with MongoDBConnect(config["mongodb"].uri, config["mongodb"].db_name) as mongo_client:
+    #     create_mongodb_schema(mongo_client.db)
+    #     mongo_client.db.users.insert_one({
+    #         "user_id" : 1,
+    #         "login" : "bangg",
+    #         "gravatar_id" : "test_gravatar_id",
+    #         "url" : "https://testurl.url",
+    #         "avatar_url" : "https://avatarurl.url"
+    #     })
+    #     print("--inserted 1 record in mongodb--")
+    #
+    #     validate_mongodb_schema(mongo_client.db)
 
 if __name__ == "__main__":
     config = get_database_config()
