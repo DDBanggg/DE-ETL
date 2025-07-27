@@ -7,7 +7,7 @@ SQL_FILE_PATH = Path("../sql/schema.sql")
 # ĐỊNH NGHĨA TOÀN BỘ CẤU TRÚC
 EXPECTED_SCHEMA = {
     "users": [
-        "users_id",
+        "user_id",
         "login",
         "url",
         "avatar_url"
@@ -78,7 +78,7 @@ def create_mongodb_schema(db):
             "bsonType" : "object",
             "required" : ["user_id", "login"],
             "properties" : {
-                "users_id" : {
+                "user_id" : {
                     "bsonType" : "int"
                 },
                 "login" : {
@@ -97,7 +97,7 @@ def create_mongodb_schema(db):
         }
     })
 
-    db.users.create_index("user_id", unique=True)
+    # db.users.create_index("user_id", unique=True)
     print("--created collection users in Mongodb--")
 
 # Kiem tra MONGODB

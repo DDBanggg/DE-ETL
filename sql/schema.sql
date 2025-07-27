@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS users (
-    users_id BIGINT ,
+    user_id BIGINT ,
     login VARCHAR(255) ,
     gravatar_id VARCHAR(255) ,
     url VARCHAR(255) ,

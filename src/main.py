@@ -10,7 +10,7 @@ def main(config):
         connection = mysql_client.connection
         cursor = mysql_client.cursor
         create_mysql_schema(connection, cursor)
-        cursor.execute("INSERT INTO users(users_id, login, gravatar_id, url, avatar_url) VALUES(%s, %s, %s, %s, %s)",
+        cursor.execute("INSERT INTO users(user_id, login, gravatar_id, url, avatar_url) VALUES(%s, %s, %s, %s, %s)",
                        (1, "test", "", "https://test.com", "https://avatar.com"))
         connection.commit()
         print("--inserted data to mysql--")
